@@ -1,7 +1,9 @@
 import java.util.Scanner;
 
 public class StringCalculator {
+	static int c = 0;
 	public static int Add(String numbers) throws Exception {
+		c++;
 		char x = ' ';
 		boolean skip = false;
 		if(numbers.length()==0) {
@@ -33,9 +35,13 @@ public class StringCalculator {
 		return Integer.parseInt(numbers);
 		
 	}
+	public static int GetCalledCount() {
+		return c;
+	}
 	public static void main(String[] args) throws Exception {
 		Scanner sc = new Scanner(System.in);
 		String s = sc.next();
 		System.out.println(Add(s));
+		System.out.println(GetCalledCount());
 	}
 }
