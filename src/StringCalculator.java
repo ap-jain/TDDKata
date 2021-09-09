@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class StringCalculator {
-	public static int Add(String numbers) {
+	public static int Add(String numbers) throws Exception {
 		char x = ' ';
 		boolean skip = false;
 		if(numbers.length()==0) {
@@ -24,10 +24,13 @@ public class StringCalculator {
 			}
 			return s;
 		}
+		if(Integer.parseInt(numbers)<0) {
+			throw new Exception("negatives not allowed"+numbers);
+		}
 		return Integer.parseInt(numbers);
 		
 	}
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		Scanner sc = new Scanner(System.in);
 		String s = sc.next();
 		System.out.println(Add(s));
