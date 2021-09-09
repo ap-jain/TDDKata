@@ -6,7 +6,12 @@ public class StringCalculator {
 			return 0;
 		}else if(numbers.contains(",")) {
 			String[] nos = numbers.split(",");
-			return Integer.parseInt(nos[0])+Integer.parseInt(nos[1]);
+			int s = 0;
+			for(int i=0;i<nos.length;i++) {
+				s+=Integer.parseInt(nos[i]);
+				
+			}
+			return s;
 		}
 		return Integer.parseInt(numbers);
 		
