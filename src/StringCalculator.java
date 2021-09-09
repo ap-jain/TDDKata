@@ -21,7 +21,10 @@ public class StringCalculator {
 			nos = numbers.split(",|\\\\n");	
 			}
 			int s = 0;
-			for(int i=0;i<nos.length;i++) {				
+			for(int i=0;i<nos.length;i++) {	
+				if(Integer.parseInt(nos[i])>1000) {
+					continue;
+				}
 				s+=Integer.parseInt(nos[i]);
 				if(Integer.parseInt(nos[i])<0) {
 					throw new Exception ("negatives not allowed"+numbers);
